@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-    CHDPacker v1.1 - Automatizacion de compresion masiva con CHDMAN.
+    CHDPacker v1.0 - Automatizacion de compresion masiva con CHDMAN.
     Detecta formatos, salta archivos existentes y realiza limpieza segura.
-    Version: 1.1 (Edicion corregida e inmune a codificacion)
+    Version: 1.0
     Creado por: William Hernandez
 #>
 
@@ -68,6 +68,8 @@ $Banner = @'
                         |_|                             
                                                 
  >> Automatizacion de compresion CHDMAN
+ >> Comprime imágenes de discos (como archivos .cue y .bin o ,cdi, .iso) en un único archivo
+ >> con formato CHD (Compressed Hunks of Data) sin perder ningún tipo de calidad.
  >> Creado por: William Hernandez
 ======================================================
 '@
@@ -94,7 +96,7 @@ if (-not (Test-Path $chdmanExe)) {
     Write-Host " [PRECAUCION / WARNING NOTICE]" -ForegroundColor Yellow
     Write-Host " El script no detecto 'chdman.exe' en la carpeta elegida." -ForegroundColor Yellow
     Write-Host " Se procedera a descargar el ejecutable directamente desde" -ForegroundColor Yellow
-    Write-Host " el repositorio oficial de GitHub de William Hernandez." -ForegroundColor Yellow
+    Write-Host " el repositorio oficial de GitHub de CHDpacker." -ForegroundColor Yellow
     Write-Host " Verifique que su conexion a Internet se encuentre activa." -ForegroundColor Yellow
     Write-Host "==========================================================" -ForegroundColor Gray
     Write-Host ""
