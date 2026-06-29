@@ -68,8 +68,8 @@ $Banner = @'
                         |_|                             
                                                 
  >> Automatizacion de compresion CHDMAN
- >> Comprime imágenes de discos (como archivos .cue y .bin o ,cdi, .iso) en un único archivo
- >> con formato CHD (Compressed Hunks of Data) sin perder ningún tipo de calidad.
+ >> Comprime imagenes de discos (como archivos .cue y .bin o ,cdi, .iso) en un unico archivo
+ >> con formato CHD (Compressed Hunks of Data) sin perder ningun tipo de calidad.
  >> Creado por: William Hernandez
 ======================================================
 '@
