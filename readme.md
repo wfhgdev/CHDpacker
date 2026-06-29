@@ -1,4 +1,3 @@
-```markdown
 # CHDPacker 🚀
 
 ```text
