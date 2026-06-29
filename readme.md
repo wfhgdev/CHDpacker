@@ -73,7 +73,3 @@ Este proyecto está bajo la licencia MIT. Siéntete libre de modificarlo, distri
 ---
 
 Desarrollado con ❤️ por **William Hernandez**
-
-```
-
-```
