@@ -1,7 +1,8 @@
 <#
 .SYNOPSIS
-    CHDPacker v1.0 - Automatizacion de compresion masiva con CHDMAN.
+    CHDPacker v1.1 - Automatizacion de compresion masiva con CHDMAN.
     Detecta formatos, salta archivos existentes y realiza limpieza segura.
+    Version: 1.1 (Edicion corregida e inmune a codificacion)
     Creado por: William Hernandez
 #>
 
@@ -84,26 +85,26 @@ $rutaTrabajo = $rutaTrabajo.TrimEnd('\')
 Write-Host "Carpeta de trabajo seleccionada: $rutaTrabajo" -ForegroundColor Green
 Write-Host ""
 
-# 2. Descarga y validacion de CHDMAN con mensaje de precaucion
+# 2. Descarga y validacion de CHDMAN con mensaje de precaucion (Corregido color y caracteres)
 $chdmanUrl = "https://github.com/wfhgdev/CHDpacker/raw/main/chdman.exe"
 $chdmanExe = Join-Path $rutaTrabajo "chdman.exe"
 
 if (-not (Test-Path $chdmanExe)) {
-    Write-Host "==========================================================" -ForegroundColor Windows
-    Write-Host " ⚠️  MENSAJE DE PRECAUCION / WARNING NOTICE ⚠️" -ForegroundColor Yellow
+    Write-Host "==========================================================" -ForegroundColor Gray
+    Write-Host " [PRECAUCION / WARNING NOTICE]" -ForegroundColor Yellow
     Write-Host " El script no detecto 'chdman.exe' en la carpeta elegida." -ForegroundColor Yellow
     Write-Host " Se procedera a descargar el ejecutable directamente desde" -ForegroundColor Yellow
     Write-Host " el repositorio oficial de GitHub de William Hernandez." -ForegroundColor Yellow
     Write-Host " Verifique que su conexion a Internet se encuentre activa." -ForegroundColor Yellow
-    Write-Host "==========================================================" -ForegroundColor Windows
+    Write-Host "==========================================================" -ForegroundColor Gray
     Write-Host ""
     
     try {
         Write-Host "Descargando chdman.exe... Por favor, espera." -ForegroundColor Cyan
         Invoke-WebRequest -Uri $chdmanUrl -OutFile $chdmanExe -ErrorAction Stop
-        Write-Host "¡Descarga completada con exito! El archivo se movio a: $rutaTrabajo`n" -ForegroundColor Green
+        Write-Host "Descarga completada con exito! El archivo se movio a: $rutaTrabajo`n" -ForegroundColor Green
     } catch {
-        Write-Host "[ERROR] Hubo un problema al descargar chdman.exe automáticamente." -ForegroundColor Red
+        Write-Host "[ERROR] Hubo un problema al descargar chdman.exe automaticamente." -ForegroundColor Red
         Write-Host "Asegurate de tener conexion a internet o coloca chdman.exe manualmente." -ForegroundColor Red
         Pause; exit
     }
@@ -185,5 +186,5 @@ foreach ($file in $juegosEncontrados) {
     Write-Host "------------------------------------------------------" -ForegroundColor Gray
 }
 
-Write-Host "`n¡Proceso de CHDPacker finalizado por completo!" -ForegroundColor Cyan
+Write-Host "`nProceso de CHDPacker finalizado por completo!" -ForegroundColor Cyan
 Pause
